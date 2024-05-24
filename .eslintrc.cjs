@@ -1,18 +1,25 @@
+const { resolve } = require("node:path");
+
+const project = resolve(__dirname, "tsconfig.json");
+
 module.exports = {
   root: true,
-  env: { browser: true, es2020: true },
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react-hooks/recommended',
+    require.resolve("pol-standard/eslint/node"),
+    require.resolve("pol-standard/eslint/react"),
+    require.resolve("pol-standard/eslint/typescript"),
+    require.resolve("pol-standard/eslint/browser"),
+    require.resolve("pol-standard/eslint/vitest"),
+    // ... other configs
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
-  rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
+  parserOptions: {
+    project,
   },
-}
+  settings: {
+    "import/resolver": {
+      typescript: {
+        project,
+      },
+    },
+  },
+};
