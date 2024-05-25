@@ -1,5 +1,5 @@
 export interface Experience {
-  id: number;
+  slug: string;
   position: string;
   company: Company;
   location: string;

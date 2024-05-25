@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "slug": "google",
     "position": "Backend Developer",
     "company": {
       "name": "Google",
@@ -29,8 +29,7 @@
       {
         "id": 4,
         "description": "Maintained and improved the performance of the cloud computing platform."
-      },
-      {}
+      }
     ],
     "technologies": [
       {
